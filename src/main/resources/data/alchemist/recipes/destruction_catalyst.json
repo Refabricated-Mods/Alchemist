@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "FMF",
+    "MSM",
+    "FMF"
+  ],
+  "key": {
+    "F": {
+      "item": "minecraft:flint_and_steel"
+    },
+    "M": {
+      "item": "alchemist:mobius_fuel"
+    },
+    "S": {
+      "item": "alchemist:philosophers_stone"
+    }
+  },
+  "result": {
+    "item": "alchemist:destruction_catalyst",
+    "count": 1
+  }
+}

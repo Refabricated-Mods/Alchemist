@@ -1,41 +1,31 @@
 {
 	"schemaVersion": 1,
-	"id": "modid",
+	"id": "alchemist",
 	"version": "${version}",
-	"name": "Example mod",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"name": "Alchemist",
+	"description": "A mod about Alchemy!",
 	"authors": [
-		"Me!"
+		"unix-supremacist"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://unix-supremacist.github.io",
+		"sources": "https://github.com/unix-supremacist/alchemist"
 	},
-	"license": "CC0-1.0",
-	"icon": "assets/modid/icon.png",
+	"license": "LGPL-3",
+	"icon": "assets/alchemist/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"com.example.ExampleMod"
+			"io.github.unix_supremacist.Entrypoint"
 		],
 		"client": [
-			"com.example.ExampleModClient"
+          "io.github.unix_supremacist.AlchemistClient"
 		]
 	},
-	"mixins": [
-		"modid.mixins.json",
-		{
-			"config": "modid.client.mixins.json",
-			"environment": "client"
-		}
-	],
 	"depends": {
 		"fabricloader": ">=0.14.21",
 		"minecraft": "~1.20.1",
 		"java": ">=17",
 		"fabric-api": "*"
-	},
-	"suggests": {
-		"another-mod": "*"
 	}
 }
