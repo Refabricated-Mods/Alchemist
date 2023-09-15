@@ -15,10 +15,27 @@ import net.minecraft.resources.ResourceKey;
 
 public enum AlchemistItems {
     alchemical_coal,
+    archangels_smite,
+    black_hole_band,
+    catalytic_lens,
     chalk(new ChalkItem(AlchemistBlocks.transmutation_circle.getBlock(), new Properties().durability(64))),
+    dark_matter,
+    dark_matter_pickaxe,
+    dark_matter_shovel,
+    dark_matter_hoe,
+    dark_matter_sword,
+    dark_matter_axe,
+    dark_matter_shears,
+    dark_matter_hammer,
     destruction_catalyst(new DestructionCatalystItem(new Properties())),
+    evertide_amulet,
+    gem_of_eternal_density,
+    harvest_goddess_band,
+    hyperkinetic_lens,
     mobius_fuel,
-    philosophers_stone(new PhilosophersStoneItem(new Properties()));
+    philosophers_stone(new PhilosophersStoneItem(new Properties())),
+    swiftwolfs_rending_gale,
+    volcanite_amulet;
 
     @Getter Item item;
     AlchemistItems(Item item){
