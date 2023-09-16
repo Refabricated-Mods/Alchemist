@@ -1,7 +1,7 @@
 package io.github.unix_supremacist.item;
 
-import io.github.unix_supremacist.content.AlchemistItems;
 import io.github.unix_supremacist.AlchemistRegistry;
+import io.github.unix_supremacist.content.AlchemistItems;
 import io.github.unix_supremacist.interfaces.AreaBox;
 import io.github.unix_supremacist.interfaces.TransmuteEntity;
 import net.minecraft.core.BlockPos;

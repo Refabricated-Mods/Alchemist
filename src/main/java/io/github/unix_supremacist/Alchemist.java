@@ -1,6 +1,5 @@
 package io.github.unix_supremacist;
 
-import io.github.feltmc.feltapi.api.splash.SplashAPI;
 import io.github.unix_supremacist.content.AlchemistBlocks;
 import io.github.unix_supremacist.content.AlchemistItems;
 import io.github.unix_supremacist.content.AlchemistSplashes;
