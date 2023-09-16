@@ -1,9 +1,7 @@
 package io.github.unix_supremacist;
 
-import io.github.feltmc.feltapi.api.splash.SplashAPI;
 import io.github.unix_supremacist.content.AlchemistBlocks;
 import io.github.unix_supremacist.content.AlchemistItems;
-import io.github.unix_supremacist.content.AlchemistSplashes;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -27,7 +25,6 @@ public class Alchemist {
         LOGGER.info("Welcome to the World of Alchemy!");
         AlchemistRegistry.registerExchanges();
         Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, new ResourceLocation(MODID, "tab"), tab);
-        AlchemistSplashes.init();
         AlchemistBlocks.values(); //force the enum to load
         AlchemistItems.values(); //force the enum to load
     }
