@@ -83,9 +83,9 @@ dependencies {
 		exclude(group: "com.terraformersmc")
 	}
 	modRuntimeOnly "maven.modrinth:modmenu:7.2.1"
-	modRuntimeOnly "maven.modrinth:jei:15.2.0.23"
-	modRuntimeOnly "maven.modrinth:modernfix:5.7.2+mc1.20.1"
-	modRuntimeOnly "maven.modrinth:ferrite-core:6.0.0-fabric"
+	//modRuntimeOnly "maven.modrinth:jei:15.2.0.23"
+	modRuntimeOnly "maven.modrinth:modernfix:5.7.3-beta.1+mc1.20.2-pre3"
+	//modRuntimeOnly "maven.modrinth:ferrite-core:6.0.0-fabric"
 	compileOnly 'org.projectlombok:lombok:1.18.24'
 	annotationProcessor 'org.projectlombok:lombok:1.18.24'
 
