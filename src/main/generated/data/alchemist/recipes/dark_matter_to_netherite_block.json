@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "alchemist:philosophers_stone"
+    },
+    {
+      "item": "minecraft:netherite_block"
+    },
+    {
+      "item": "minecraft:netherite_block"
+    }
+  ],
+  "result": {
+    "item": "alchemist:dark_matter"
+  }
+}

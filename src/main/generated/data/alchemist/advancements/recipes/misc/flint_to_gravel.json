@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "alchemist:alchemical_coal_to_coal"
+        "recipe": "alchemist:flint_to_gravel"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "alchemist:alchemical_coal_to_coal"
+      "alchemist:flint_to_gravel"
     ]
   },
   "sends_telemetry_event": false

@@ -11,8 +11,8 @@ import net.minecraft.tags.TagKey;
 
 import java.util.concurrent.CompletableFuture;
 
-public class tag extends FabricTagProvider.ItemTagProvider {
-    public tag(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> completableFuture) {
+public class Tag extends FabricTagProvider.ItemTagProvider {
+    public Tag(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> completableFuture) {
         super(output, completableFuture);
     }
 

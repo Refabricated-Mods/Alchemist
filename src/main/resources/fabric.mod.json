@@ -22,7 +22,7 @@
           "io.github.unix_supremacist.AlchemistClient"
 		],
 		"fabric-datagen": [
-			"io.github.unix_supremacist.data.datagen"
+          "io.github.unix_supremacist.data.Datagen"
 		]
 	},
 	"depends": {

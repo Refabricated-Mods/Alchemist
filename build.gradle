@@ -82,9 +82,12 @@ dependencies {
 	include modImplementation("io.github.feltmc:felt-tool-api:1.0.0"){
 		exclude(group: "com.terraformersmc")
 	}
-	modRuntimeOnly "maven.modrinth:modmenu:7.2.1"
+	modRuntimeOnly "maven.modrinth:modmenu:${project.modmenu_version}"
 	//modRuntimeOnly "maven.modrinth:jei:15.2.0.23"
-	modRuntimeOnly "maven.modrinth:modernfix:5.7.3-beta.1+mc1.20.2-pre3"
+	//modRuntimeOnly "maven.modrinth:architectury-api:10.0.7+fabric"
+	//modRuntimeOnly "maven.modrinth:cloth-config:12.0.107+fabric"
+	//modRuntimeOnly "maven.modrinth:rei:13.0.654+fabric"
+	modRuntimeOnly "maven.modrinth:modernfix:${project.modernfix_version}"
 	//modRuntimeOnly "maven.modrinth:ferrite-core:6.0.0-fabric"
 	compileOnly 'org.projectlombok:lombok:1.18.24'
 	annotationProcessor 'org.projectlombok:lombok:1.18.24'
