@@ -15,6 +15,9 @@ repositories {
 		name = 'ParchmentMC'
 		url = 'https://maven.parchmentmc.org'
 	}
+	maven {
+		url "https://maven.su5ed.dev/releases"
+	}
 	exclusiveContent {
 		forRepository {
 			maven {
@@ -28,16 +31,18 @@ repositories {
 	}
 }
 
-loom {
-    splitEnvironmentSourceSets()
-
-	mods {
-		"modid" {
-			sourceSet sourceSets.main
-			sourceSet sourceSets.client
+sourceSets {
+	client {
+		java {
+			compileClasspath += main.compileClasspath
+			compileClasspath += main.output
 		}
 	}
+}
 
+jar {
+	from sourceSets.client.output.classesDirs
+	from sourceSets.client.output.resourcesDir
 }
 
 dependencies {
@@ -50,6 +55,7 @@ dependencies {
 	forge "net.minecraftforge:forge:${project.forge_version}"
 	//modRuntimeOnly "maven.modrinth:jei:15.2.0.23"
 	//modRuntimeOnly "maven.modrinth:modernfix:5.7.2+mc1.20.1"
+	modImplementation "dev.su5ed.sinytra.fabric-api:fabric-api:${project.fabric_version}"
 	modRuntimeOnly "maven.modrinth:ferrite-core:6.0.0-forge"
 	compileOnly 'org.projectlombok:lombok:1.18.24'
 	annotationProcessor 'org.projectlombok:lombok:1.18.24'

@@ -58,7 +58,7 @@ public class PhilosophersStoneItem extends Item implements AreaBox, TransmuteEnt
     }
 
     @Override
-    public ItemStack getRecipeRemainder(ItemStack stack) {
+    public ItemStack getCraftingRemainingItem(ItemStack stack) {
         return new ItemStack(AlchemistItems.philosophers_stone.getItem());
     }
 

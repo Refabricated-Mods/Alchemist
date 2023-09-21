@@ -1,12 +1,16 @@
 package io.github.unix_supremacist;
 
-import net.fabricmc.api.ModInitializer;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 
-public class Entrypoint implements ModInitializer {
+@Mod(Alchemist.MODID)
+public class Entrypoint {
 
+	public Entrypoint() {
 
-	@Override
-	public void onInitialize() {
+	}
+
+	private void commonSetup(final FMLCommonSetupEvent event){
 		Alchemist.Init();
 	}
 }
