@@ -29,6 +29,13 @@ repositories {
 			includeGroup "maven.modrinth"
 		}
 	}
+	maven {
+		url = 'https://maven.ladysnake.org/releases'
+	}
+	maven {
+		name = "TerraformersMC"
+		url = "https://maven.terraformersmc.com/"
+	}
 }
 
 loom {
@@ -83,7 +90,12 @@ dependencies {
 		exclude(group: "com.terraformersmc")
 	}
 	modRuntimeOnly "maven.modrinth:modmenu:${project.modmenu_version}"
-	//modRuntimeOnly "maven.modrinth:jei:15.2.0.23"
+	include modImplementation("io.github.ladysnake:PlayerAbilityLib:1.9.0")
+	//required for trinkets
+	modRuntimeOnly "dev.onyxstudios.cardinal-components-api:cardinal-components-base:5.3.0"
+	modRuntimeOnly "dev.onyxstudios.cardinal-components-api:cardinal-components-entity:5.3.0"
+	modImplementation "dev.emi:trinkets:3.8.0"
+	modRuntimeOnly "maven.modrinth:jei:16.0.0.28"
 	//modRuntimeOnly "maven.modrinth:architectury-api:10.0.7+fabric"
 	//modRuntimeOnly "maven.modrinth:cloth-config:12.0.107+fabric"
 	//modRuntimeOnly "maven.modrinth:rei:13.0.654+fabric"

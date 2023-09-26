@@ -1,44 +1,28 @@
 package io.github.unix_supremacist;
 
+import io.github.unix_supremacist.data.BlockTag;
+import net.fabricmc.fabric.api.event.lifecycle.v1.CommonLifecycleEvents;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 
 public class AlchemistRegistry {
     public static HashSet<ArrayList<Block>> exchanges = new HashSet<>();
-    public static ArrayList<Block> ground = new ArrayList<>();
+    public static ArrayList<Block> terra = new ArrayList<>();
     public static ArrayList<Block> wood = new ArrayList<>();
+    public static ArrayList<Block> leave = new ArrayList<>();
+
     public static void registerExchanges(){
-        ground.add(Blocks.GRASS_BLOCK);
-        ground.add(Blocks.DIRT);
-        ground.add(Blocks.COBBLESTONE);
-        ground.add(Blocks.STONE);
-        ground.add(Blocks.SAND);
-        ground.add(Blocks.GRAVEL);
-        exchanges.add(ground);
-        wood.add(Blocks.OAK_LOG);
-        wood.add(Blocks.ACACIA_LOG);
-        wood.add(Blocks.BIRCH_LOG);
-        wood.add(Blocks.CHERRY_LOG);
-        wood.add(Blocks.JUNGLE_LOG);
-        wood.add(Blocks.DARK_OAK_LOG);
-        wood.add(Blocks.MANGROVE_LOG);
-        wood.add(Blocks.SPRUCE_LOG);
-        wood.add(Blocks.CRIMSON_STEM);
-        wood.add(Blocks.WARPED_STEM);
-        wood.add(Blocks.STRIPPED_OAK_LOG);
-        wood.add(Blocks.STRIPPED_ACACIA_LOG);
-        wood.add(Blocks.STRIPPED_BIRCH_LOG);
-        wood.add(Blocks.STRIPPED_CHERRY_LOG);
-        wood.add(Blocks.STRIPPED_JUNGLE_LOG);
-        wood.add(Blocks.STRIPPED_DARK_OAK_LOG);
-        wood.add(Blocks.STRIPPED_MANGROVE_LOG);
-        wood.add(Blocks.STRIPPED_SPRUCE_LOG);
-        wood.add(Blocks.STRIPPED_CRIMSON_STEM);
-        wood.add(Blocks.STRIPPED_WARPED_STEM);
-        exchanges.add(wood);
+        CommonLifecycleEvents.TAGS_LOADED.register((registries, client) -> {
+            BuiltInRegistries.BLOCK.getTagOrEmpty(BlockTag.terratag).iterator().forEachRemaining(t ->terra.add(t.value()));
+            BuiltInRegistries.BLOCK.getTagOrEmpty(BlockTag.woodtag).iterator().forEachRemaining(t ->wood.add(t.value()));
+            BuiltInRegistries.BLOCK.getTagOrEmpty(BlockTag.leavetag).iterator().forEachRemaining(t ->leave.add(t.value()));
+            exchanges.add(terra);
+            exchanges.add(wood);
+            exchanges.add(leave);
+        });
     }
 
     public static Block getBlockWithOffset(Block b, ArrayList<Block> exchange, int o){

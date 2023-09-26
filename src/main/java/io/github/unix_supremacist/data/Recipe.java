@@ -3,13 +3,11 @@ package io.github.unix_supremacist.data;
 import io.github.unix_supremacist.Alchemist;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
-import net.minecraft.data.recipes.RecipeCategory;
-import net.minecraft.data.recipes.RecipeOutput;
-import net.minecraft.data.recipes.RecipeProvider;
-import net.minecraft.data.recipes.ShapelessRecipeBuilder;
+import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
 
 import static io.github.unix_supremacist.content.AlchemistItems.*;
 
@@ -20,6 +18,23 @@ public class Recipe extends FabricRecipeProvider {
 
     @Override
     public void buildRecipes(RecipeOutput recipeoutput) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, swiftwolfs_rending_gale.getItem())
+                .pattern("D")
+                .pattern("B")
+                .define('D', dark_matter.getItem())
+                .define('B', iron_band.getItem())
+                .unlockedBy(RecipeProvider.getHasName(dark_matter.getItem()), RecipeProvider.has(dark_matter.getItem()))
+                .unlockedBy(RecipeProvider.getHasName(iron_band.getItem()), RecipeProvider.has(iron_band.getItem()))
+                .save(recipeoutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, iron_band.getItem())
+                .pattern("III")
+                .pattern("ILI")
+                .pattern("III")
+                .define('I', Items.IRON_INGOT)
+                .define('L', Items.LAVA_BUCKET)
+                .unlockedBy(RecipeProvider.getHasName(Items.IRON_INGOT), RecipeProvider.has(Items.IRON_INGOT))
+                .unlockedBy(RecipeProvider.getHasName(Items.LAVA_BUCKET), RecipeProvider.has(Items.LAVA_BUCKET))
+                .save(recipeoutput);
         twoWayPhilStoneRecipe(Items.COAL, Items.CHARCOAL, 4, recipeoutput);
         twoWayPhilStoneRecipe(alchemical_coal.getItem(), Items.COAL, 4, recipeoutput);
         twoWayPhilStoneRecipe(mobius_fuel.getItem(), alchemical_coal.getItem(), 4, recipeoutput);
