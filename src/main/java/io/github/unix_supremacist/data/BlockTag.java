@@ -1,10 +1,10 @@
 package io.github.unix_supremacist.data;
 
 import io.github.unix_supremacist.Alchemist;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
@@ -13,24 +13,22 @@ import net.minecraft.world.level.block.Blocks;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.concurrent.CompletableFuture;
-
-public class BlockTag extends FabricTagProvider.BlockTagProvider {
+public class BlockTag extends FabricTagProvider<Block> {
     public static HashSet<ArrayList<Block>> exchanges = new HashSet<>();
-    public static TagKey<Block> terratag = TagKey.create(BuiltInRegistries.BLOCK.key(), new ResourceLocation(Alchemist.MODID, "terra"));
-    public static TagKey<Block> woodtag = TagKey.create(BuiltInRegistries.BLOCK.key(), new ResourceLocation(Alchemist.MODID, "wood"));
-    public static TagKey<Block> netherwoodtag = TagKey.create(BuiltInRegistries.BLOCK.key(), new ResourceLocation(Alchemist.MODID, "netherwood"));
-    public static TagKey<Block> leavetag = TagKey.create(BuiltInRegistries.BLOCK.key(), new ResourceLocation(Alchemist.MODID, "leave"));
-    public static TagKey<Block> stonetag = TagKey.create(BuiltInRegistries.BLOCK.key(), new ResourceLocation(Alchemist.MODID, "stone"));
-    public static TagKey<Block> obsidiantag = TagKey.create(BuiltInRegistries.BLOCK.key(), new ResourceLocation(Alchemist.MODID, "obsidian"));
-    public static TagKey<Block> stonebrickstag = TagKey.create(BuiltInRegistries.BLOCK.key(), new ResourceLocation(Alchemist.MODID, "stonebricks"));
+    public static TagKey<Block> terratag = TagKey.create(Registry.BLOCK.key(), new ResourceLocation(Alchemist.MODID, "terra"));
+    public static TagKey<Block> woodtag = TagKey.create(Registry.BLOCK.key(), new ResourceLocation(Alchemist.MODID, "wood"));
+    public static TagKey<Block> netherwoodtag = TagKey.create(Registry.BLOCK.key(), new ResourceLocation(Alchemist.MODID, "netherwood"));
+    public static TagKey<Block> leavetag = TagKey.create(Registry.BLOCK.key(), new ResourceLocation(Alchemist.MODID, "leave"));
+    public static TagKey<Block> stonetag = TagKey.create(Registry.BLOCK.key(), new ResourceLocation(Alchemist.MODID, "stone"));    public static TagKey<Block> obsidiantag = TagKey.create(Registry.BLOCK.key(), new ResourceLocation(Alchemist.MODID, "obsidian"));
+    public static TagKey<Block> stonebrickstag = TagKey.create(Registry.BLOCK.key(), new ResourceLocation(Alchemist.MODID, "stonebricks"));
 
-    public BlockTag(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> completableFuture) {
-        super(output, completableFuture);
+    public BlockTag(FabricDataGenerator dataGenerator) {
+        super(dataGenerator, Registry.BLOCK);
     }
 
     protected static void addExchange(TagKey<Block> tag){
         ArrayList<Block> arrayList = new ArrayList<>();
-        BuiltInRegistries.BLOCK.getTagOrEmpty(tag).iterator().forEachRemaining(t ->arrayList.add(t.value()));
+        Registry.BLOCK.getTagOrEmpty(tag).iterator().forEachRemaining(t ->arrayList.add(t.value()));
         exchanges.add(arrayList);
     }
 
@@ -45,7 +43,7 @@ public class BlockTag extends FabricTagProvider.BlockTagProvider {
     }
 
     @Override
-    protected void addTags(HolderLookup.Provider arg) {
+    protected void generateTags() {
         FabricTagBuilder terra = getOrCreateTagBuilder(terratag);
         terra.add(Blocks.GRASS_BLOCK);
         terra.add(Blocks.DIRT);
@@ -63,7 +61,6 @@ public class BlockTag extends FabricTagProvider.BlockTagProvider {
         wood.add(Blocks.OAK_LOG);
         wood.add(Blocks.ACACIA_LOG);
         wood.add(Blocks.BIRCH_LOG);
-        wood.add(Blocks.CHERRY_LOG);
         wood.add(Blocks.JUNGLE_LOG);
         wood.add(Blocks.DARK_OAK_LOG);
         wood.add(Blocks.MANGROVE_LOG);
@@ -71,7 +68,6 @@ public class BlockTag extends FabricTagProvider.BlockTagProvider {
         wood.add(Blocks.STRIPPED_OAK_LOG);
         wood.add(Blocks.STRIPPED_ACACIA_LOG);
         wood.add(Blocks.STRIPPED_BIRCH_LOG);
-        wood.add(Blocks.STRIPPED_CHERRY_LOG);
         wood.add(Blocks.STRIPPED_JUNGLE_LOG);
         wood.add(Blocks.STRIPPED_DARK_OAK_LOG);
         wood.add(Blocks.STRIPPED_MANGROVE_LOG);
@@ -79,7 +75,6 @@ public class BlockTag extends FabricTagProvider.BlockTagProvider {
         wood.add(Blocks.OAK_WOOD);
         wood.add(Blocks.ACACIA_LOG);
         wood.add(Blocks.BIRCH_LOG);
-        wood.add(Blocks.CHERRY_LOG);
         wood.add(Blocks.JUNGLE_LOG);
         wood.add(Blocks.DARK_OAK_LOG);
         wood.add(Blocks.MANGROVE_LOG);
@@ -95,7 +90,6 @@ public class BlockTag extends FabricTagProvider.BlockTagProvider {
         leave.add(Blocks.OAK_LEAVES);
         leave.add(Blocks.ACACIA_LEAVES);
         leave.add(Blocks.BIRCH_LEAVES);
-        leave.add(Blocks.CHERRY_LEAVES);
         leave.add(Blocks.JUNGLE_LEAVES);
         leave.add(Blocks.DARK_OAK_LEAVES);
         leave.add(Blocks.MANGROVE_LEAVES);

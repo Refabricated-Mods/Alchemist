@@ -74,6 +74,12 @@ sourceSets {
 	}
 }
 
+configurations.all {
+	resolutionStrategy {
+		force("net.fabricmc:fabric-loader:$loader_version")
+	}
+}
+
 dependencies {
 	// To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
@@ -83,9 +89,9 @@ dependencies {
 	}
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-	modImplementation "TechReborn:TechReborn-1.20:5.9.1"
-	include(implementation(annotationProcessor("io.github.llamalad7:mixinextras-fabric:0.2.0-rc.4")))
-	include modImplementation("net.feltmc:felt-splash-api:1.0.0-1.20.1"){
+	//modImplementation "TechReborn:TechReborn-1.20:5.9.1"
+	//include(implementation(annotationProcessor("io.github.llamalad7:mixinextras-fabric:0.2.0-rc.4")))
+	include modImplementation("net.feltmc:felt-splash-api:1.0.0-1.19.2"){
 		exclude(group: "com.terraformersmc")
 	}
 	/*include modImplementation("net.feltmc:felt-tool-api:1.0.0-1.20.1"){
@@ -95,16 +101,16 @@ dependencies {
 		exclude(group: "com.terraformersmc")
 	}*/
 	modRuntimeOnly "maven.modrinth:modmenu:${project.modmenu_version}"
-	modImplementation "io.github.ladysnake:PlayerAbilityLib:1.9.0"
+	 modImplementation "io.github.ladysnake:PlayerAbilityLib:1.6.0"
 	//required for trinkets
-	modRuntimeOnly "dev.onyxstudios.cardinal-components-api:cardinal-components-base:5.3.0"
-	modRuntimeOnly "dev.onyxstudios.cardinal-components-api:cardinal-components-entity:5.3.0"
-	modImplementation "dev.emi:trinkets:3.8.0"
-	modRuntimeOnly "maven.modrinth:jei:16.0.0.28"
+	modRuntimeOnly "dev.onyxstudios.cardinal-components-api:cardinal-components-base:5.0.2"
+	modRuntimeOnly "dev.onyxstudios.cardinal-components-api:cardinal-components-entity:5.0.2"
+	modImplementation "dev.emi:trinkets:3.4.1"
+	//modRuntimeOnly "maven.modrinth:jei:11.6.0.1018"
 	//modRuntimeOnly "maven.modrinth:architectury-api:10.0.7+fabric"
 	//modRuntimeOnly "maven.modrinth:cloth-config:12.0.107+fabric"
 	//modRuntimeOnly "maven.modrinth:rei:13.0.654+fabric"
-	modRuntimeOnly "maven.modrinth:modernfix:${project.modernfix_version}"
+	//modRuntimeOnly "maven.modrinth:modernfix:${project.modernfix_version}"
 	//modRuntimeOnly "maven.modrinth:ferrite-core:6.0.0-fabric"
 	compileOnly 'org.projectlombok:lombok:1.18.24'
 	annotationProcessor 'org.projectlombok:lombok:1.18.24'

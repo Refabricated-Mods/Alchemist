@@ -19,14 +19,14 @@ public class GaleItem extends TrinketItem {
 
     @Override
     public void onEquip(ItemStack stack, SlotReference slot, LivingEntity entity) {
-        if (!entity.level().isClientSide())
+        if (!entity.level.isClientSide())
             if (entity instanceof Player)
                 gale_ability.grantTo((Player) entity, VanillaAbilities.ALLOW_FLYING);
     }
 
     @Override
     public void onUnequip(ItemStack stack, SlotReference slot, LivingEntity entity) {
-        if (!entity.level().isClientSide())
+        if (!entity.level.isClientSide())
             if (entity instanceof Player)
                 gale_ability.revokeFrom((Player) entity, VanillaAbilities.ALLOW_FLYING);
     }

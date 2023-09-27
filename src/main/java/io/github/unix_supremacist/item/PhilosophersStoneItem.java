@@ -51,11 +51,11 @@ public class PhilosophersStoneItem extends AbstractEmpowerableItem implements Ar
     }
 
     public InteractionResult interactLivingEntity(ItemStack stack, Player player, LivingEntity entity, InteractionHand hand) {
-        return transmuteEntity(entity, player.level());
+        return transmuteEntity(entity, player.level);
     }
 
-    @Override
+    /*@Override
     public ItemStack getRecipeRemainder(ItemStack stack) {
         return stack.copy();
-    }
+    }*/
 }

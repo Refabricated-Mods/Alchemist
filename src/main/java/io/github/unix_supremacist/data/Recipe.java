@@ -1,24 +1,24 @@
 package io.github.unix_supremacist.data;
 
 import io.github.unix_supremacist.Alchemist;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import java.util.function.Consumer;
 
 import static io.github.unix_supremacist.content.AlchemistItems.*;
 
 public class Recipe extends FabricRecipeProvider {
-    public Recipe(FabricDataOutput generator) {
-        super(generator);
+    public Recipe(FabricDataGenerator dataGenerator) {
+        super(dataGenerator);
     }
 
     @Override
-    public void buildRecipes(RecipeOutput recipeoutput) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, swiftwolfs_rending_gale.getItem())
+    public void generateRecipes(Consumer<FinishedRecipe> recipeoutput) {
+        /*ShapedRecipeBuilder.shaped(swiftwolfs_rending_gale.getItem())
                 .pattern("D")
                 .pattern("B")
                 .define('D', dark_matter.getItem())
@@ -26,7 +26,7 @@ public class Recipe extends FabricRecipeProvider {
                 .unlockedBy(RecipeProvider.getHasName(dark_matter.getItem()), RecipeProvider.has(dark_matter.getItem()))
                 .unlockedBy(RecipeProvider.getHasName(iron_band.getItem()), RecipeProvider.has(iron_band.getItem()))
                 .save(recipeoutput);
-        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, iron_band.getItem())
+        ShapedRecipeBuilder.shaped(iron_band.getItem())
                 .pattern("III")
                 .pattern("ILI")
                 .pattern("III")
@@ -35,7 +35,7 @@ public class Recipe extends FabricRecipeProvider {
                 .unlockedBy(RecipeProvider.getHasName(Items.IRON_INGOT), RecipeProvider.has(Items.IRON_INGOT))
                 .unlockedBy(RecipeProvider.getHasName(Items.LAVA_BUCKET), RecipeProvider.has(Items.LAVA_BUCKET))
                 .save(recipeoutput);
-        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, catalytic_lens.getItem())
+        ShapedRecipeBuilder.shaped(catalytic_lens.getItem())
                 .pattern("DDD")
                 .pattern("CDC")
                 .pattern("DDD")
@@ -44,7 +44,7 @@ public class Recipe extends FabricRecipeProvider {
                 .unlockedBy(RecipeProvider.getHasName(red_matter.getItem()), RecipeProvider.has(red_matter.getItem()))
                 .unlockedBy(RecipeProvider.getHasName(destruction_catalyst.getItem()), RecipeProvider.has(destruction_catalyst.getItem()))
                 .save(recipeoutput);
-        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, destruction_catalyst.getItem())
+        ShapedRecipeBuilder.shaped(destruction_catalyst.getItem())
                 .pattern("FRF")
                 .pattern("ASA")
                 .pattern("FRF")
@@ -57,7 +57,7 @@ public class Recipe extends FabricRecipeProvider {
                 .unlockedBy(RecipeProvider.getHasName(philosophers_stone.getItem()), RecipeProvider.has(philosophers_stone.getItem()))
                 .unlockedBy(RecipeProvider.getHasName(red_matter.getItem()), RecipeProvider.has(red_matter.getItem()))
                 .save(recipeoutput);
-        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, volcanite_amulet.getItem())
+        ShapedRecipeBuilder.shaped(volcanite_amulet.getItem())
                 .pattern("LLL")
                 .pattern("DDD")
                 .pattern("LLL")
@@ -66,7 +66,7 @@ public class Recipe extends FabricRecipeProvider {
                 .unlockedBy(RecipeProvider.getHasName(dark_matter.getItem()), RecipeProvider.has(dark_matter.getItem()))
                 .unlockedBy(RecipeProvider.getHasName(Items.LAVA_BUCKET), RecipeProvider.has(Items.LAVA_BUCKET))
                 .save(recipeoutput);
-        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, evertide_amulet.getItem())
+        ShapedRecipeBuilder.shaped(evertide_amulet.getItem())
                 .pattern("WWW")
                 .pattern("DDD")
                 .pattern("WWW")
@@ -75,7 +75,7 @@ public class Recipe extends FabricRecipeProvider {
                 .unlockedBy(RecipeProvider.getHasName(dark_matter.getItem()), RecipeProvider.has(dark_matter.getItem()))
                 .unlockedBy(RecipeProvider.getHasName(Items.WATER_BUCKET), RecipeProvider.has(Items.WATER_BUCKET))
                 .save(recipeoutput);
-        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, chalk.getItem())
+        ShapedRecipeBuilder.shaped(chalk.getItem())
                 .pattern("CD")
                 .pattern("D ")
                 .define('D', Items.DIORITE)
@@ -83,7 +83,7 @@ public class Recipe extends FabricRecipeProvider {
                 .unlockedBy(RecipeProvider.getHasName(Items.DIORITE), RecipeProvider.has(Items.DIORITE))
                 .unlockedBy(RecipeProvider.getHasName(Items.CLAY_BALL), RecipeProvider.has(Items.CLAY_BALL))
                 .save(recipeoutput);
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.COBBLESTONE)
+        ShapedRecipeBuilder.shaped(Items.COBBLESTONE)
                 .pattern("WPL")
                 .define('W', ItemTag.water_bucket)
                 .define('P', philosophers_stone.getItem())
@@ -92,7 +92,7 @@ public class Recipe extends FabricRecipeProvider {
                 .unlockedBy(RecipeProvider.getHasName(Items.WATER_BUCKET), RecipeProvider.has(Items.WATER_BUCKET))
                 .unlockedBy(RecipeProvider.getHasName(philosophers_stone.getItem()), RecipeProvider.has(philosophers_stone.getItem()))
                 .save(recipeoutput);
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.OBSIDIAN)
+        ShapedRecipeBuilder.shaped(Items.OBSIDIAN)
                 .pattern("PWL")
                 .define('W', ItemTag.water_bucket)
                 .define('P', philosophers_stone.getItem())
@@ -101,7 +101,7 @@ public class Recipe extends FabricRecipeProvider {
                 .unlockedBy(RecipeProvider.getHasName(Items.WATER_BUCKET), RecipeProvider.has(Items.WATER_BUCKET))
                 .unlockedBy(RecipeProvider.getHasName(philosophers_stone.getItem()), RecipeProvider.has(philosophers_stone.getItem()))
                 .save(recipeoutput);
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.STONE)
+        ShapedRecipeBuilder.shaped(Items.STONE)
                 .pattern("PLW")
                 .define('W', ItemTag.water_bucket)
                 .define('P', philosophers_stone.getItem())
@@ -170,23 +170,23 @@ public class Recipe extends FabricRecipeProvider {
         twoWayPhilStoneRecipe(Items.GUNPOWDER, Items.EMERALD, 1, recipeoutput);
         twoWayPhilStoneRecipe(Items.BLAZE_ROD, Items.GUNPOWDER, 2, recipeoutput);
         twoWayPhilStoneRecipe(Items.ENDER_PEARL, Items.BLAZE_ROD, 2, recipeoutput);
-
+        */
     }
 
-    public void twoWayPhilStoneRecipe(Item first, Item second, int count, RecipeOutput recipeoutput){
+    public void twoWayPhilStoneRecipe(Item first, Item second, int count, Consumer<FinishedRecipe> recipeoutput){
         twoWayPhilStoneRecipe(first, 1, second, count, recipeoutput);
     }
 
-    public void twoWayPhilStoneRecipe(Item first, int firstcount, Item second, int secondcount, RecipeOutput recipeoutput){
+    public void twoWayPhilStoneRecipe(Item first, int firstcount, Item second, int secondcount, Consumer<FinishedRecipe> recipeoutput){
         philStoneRecipe(first, firstcount, second, secondcount, recipeoutput);
         philStoneRecipe(second, secondcount, first, firstcount, recipeoutput);
     }
 
-    public void philStoneRecipe(Item output, int outputcount, Item input, int inputcount, RecipeOutput recipeoutput){
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, output, outputcount)
+    public void philStoneRecipe(Item output, int outputcount, Item input, int inputcount, Consumer<FinishedRecipe> recipeoutput){
+        /*ShapelessRecipeBuilder.shapeless(output, outputcount)
                 .requires(philosophers_stone.getItem())
                 .requires(input, inputcount)
                 .unlockedBy(RecipeProvider.getHasName(philosophers_stone.getItem()), RecipeProvider.has(philosophers_stone.getItem()))
-                .save(recipeoutput, new ResourceLocation(Alchemist.MODID, output +"_to_"+input));
+                .save(recipeoutput, new ResourceLocation(Alchemist.MODID, output +"_to_"+input));*/
     }
 }

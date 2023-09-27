@@ -6,10 +6,9 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 public class Datagen implements DataGeneratorEntrypoint {
     @Override
     public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
-        FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
-        pack.addProvider(ItemTag::new);
-        pack.addProvider(BlockTag::new);
-        pack.addProvider(Recipe::new);
-        pack.addProvider(Language::new);
+        fabricDataGenerator.addProvider(ItemTag::new);
+        fabricDataGenerator.addProvider(BlockTag::new);
+        fabricDataGenerator.addProvider(Recipe::new);
+        fabricDataGenerator.addProvider(Language::new);
     }
 }
