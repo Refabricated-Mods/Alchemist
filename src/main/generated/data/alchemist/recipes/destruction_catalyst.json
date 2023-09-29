@@ -1,10 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "FMF",
-    "MSM",
-    "FMF"
-  ],
+  "category": "equipment",
   "key": {
     "F": {
       "item": "minecraft:flint_and_steel"
@@ -16,8 +12,13 @@
       "item": "alchemist:philosophers_stone"
     }
   },
+  "pattern": [
+    "FMF",
+    "MSM",
+    "FMF"
+  ],
   "result": {
-    "item": "alchemist:destruction_catalyst",
-    "count": 1
-  }
+    "item": "alchemist:destruction_catalyst"
+  },
+  "show_notification": true
 }

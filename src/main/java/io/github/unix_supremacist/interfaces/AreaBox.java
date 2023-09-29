@@ -18,6 +18,7 @@ public interface AreaBox {
     }
 
     default ArrayList<BlockPos> getAreaFromFacing(Direction dir, BlockPos anchor, int size, int depth){
+        Alchemist.LOGGER.error(size+" "+depth);
         switch(dir) {
             case SOUTH:
                 return getArea(dir, anchor, new BlockPos(-size, -size, -depth), new BlockPos(size, size, 0));
@@ -35,5 +36,14 @@ public interface AreaBox {
                 Alchemist.LOGGER.error("HOW DID YOU CLICK A DIRECTION THAT ISN'T NORTH SOUTH EAST WEST TOP OR BOTTOM");
                 return null;
         }
+    }
+
+    default int[] thing(int size){;
+        int[] x = new int[size * 2];
+        for (int i = 0; i < size; i+=2) {
+            x[i] = i%3;
+            x[i+1] = i/3;
+        }
+        return x;
     }
 }

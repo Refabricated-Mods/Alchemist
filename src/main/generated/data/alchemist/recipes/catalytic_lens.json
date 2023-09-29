@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "C": {
+      "item": "alchemist:destruction_catalyst"
+    },
+    "D": {
+      "item": "alchemist:dark_matter"
+    }
+  },
+  "pattern": [
+    "DDD",
+    "CDC",
+    "DDD"
+  ],
+  "result": {
+    "item": "alchemist:catalytic_lens"
+  },
+  "show_notification": true
+}

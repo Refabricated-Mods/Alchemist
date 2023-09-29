@@ -7,7 +7,6 @@ import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.crafting.Ingredient;
 
 import static io.github.unix_supremacist.content.AlchemistItems.*;
 
@@ -34,6 +33,34 @@ public class Recipe extends FabricRecipeProvider {
                 .define('L', Items.LAVA_BUCKET)
                 .unlockedBy(RecipeProvider.getHasName(Items.IRON_INGOT), RecipeProvider.has(Items.IRON_INGOT))
                 .unlockedBy(RecipeProvider.getHasName(Items.LAVA_BUCKET), RecipeProvider.has(Items.LAVA_BUCKET))
+                .save(recipeoutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, catalytic_lens.getItem())
+                .pattern("DDD")
+                .pattern("CDC")
+                .pattern("DDD")
+                .define('D', dark_matter.getItem())
+                .define('C', destruction_catalyst.getItem())
+                .unlockedBy(RecipeProvider.getHasName(dark_matter.getItem()), RecipeProvider.has(dark_matter.getItem()))
+                .unlockedBy(RecipeProvider.getHasName(destruction_catalyst.getItem()), RecipeProvider.has(destruction_catalyst.getItem()))
+                .save(recipeoutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, destruction_catalyst.getItem())
+                .pattern("FMF")
+                .pattern("MSM")
+                .pattern("FMF")
+                .define('F', Items.FLINT_AND_STEEL)
+                .define('M', mobius_fuel.getItem())
+                .define('S', philosophers_stone.getItem())
+                .unlockedBy(RecipeProvider.getHasName(Items.FLINT_AND_STEEL), RecipeProvider.has(Items.FLINT_AND_STEEL))
+                .unlockedBy(RecipeProvider.getHasName(mobius_fuel.getItem()), RecipeProvider.has(mobius_fuel.getItem()))
+                .unlockedBy(RecipeProvider.getHasName(philosophers_stone.getItem()), RecipeProvider.has(philosophers_stone.getItem()))
+                .save(recipeoutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, chalk.getItem())
+                .pattern("CD")
+                .pattern("D ")
+                .define('D', Items.DIORITE)
+                .define('C', Items.CLAY_BALL)
+                .unlockedBy(RecipeProvider.getHasName(Items.DIORITE), RecipeProvider.has(Items.DIORITE))
+                .unlockedBy(RecipeProvider.getHasName(Items.CLAY_BALL), RecipeProvider.has(Items.CLAY_BALL))
                 .save(recipeoutput);
         twoWayPhilStoneRecipe(Items.COAL, Items.CHARCOAL, 4, recipeoutput);
         twoWayPhilStoneRecipe(alchemical_coal.getItem(), Items.COAL, 4, recipeoutput);

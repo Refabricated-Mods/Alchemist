@@ -2,7 +2,7 @@ package io.github.unix_supremacist.content;
 
 import io.github.unix_supremacist.Alchemist;
 import io.github.unix_supremacist.item.ChalkItem;
-import io.github.unix_supremacist.item.DestructionCatalystItem;
+import io.github.unix_supremacist.item.DestructionItem;
 import io.github.unix_supremacist.item.GaleItem;
 import io.github.unix_supremacist.item.PhilosophersStoneItem;
 import lombok.Getter;
@@ -19,7 +19,7 @@ public enum AlchemistItems {
     alchemical_coal(6400),
     //archangels_smite,
     //black_hole_band,
-    //catalytic_lens,
+    catalytic_lens(new DestructionItem(new Properties().stacksTo(1), 3, 10, 5)),
     chalk(new ChalkItem(AlchemistBlocks.transmutation_circle.getBlock(), new Properties().durability(64))),
     dark_matter,
     //dark_matter_pickaxe,
@@ -29,15 +29,15 @@ public enum AlchemistItems {
     //dark_matter_axe,
     //dark_matter_shears,
     //dark_matter_hammer,
-    destruction_catalyst(new DestructionCatalystItem(new Properties())),
+    destruction_catalyst(new DestructionItem(new Properties().stacksTo(1), 3, 5, 1)),
     //evertide_amulet,
     //gem_of_eternal_density,
     //harvest_goddess_band,
     //hyperkinetic_lens,
     iron_band,
     mobius_fuel(25600),
-    philosophers_stone(new PhilosophersStoneItem(new Properties())),
-    swiftwolfs_rending_gale(new GaleItem(new Properties())),
+    philosophers_stone(new PhilosophersStoneItem(new Properties().stacksTo(1))),
+    swiftwolfs_rending_gale(new GaleItem(new Properties().stacksTo(1))),
     //volcanite_amulet,
     ;
     @Getter Item item;

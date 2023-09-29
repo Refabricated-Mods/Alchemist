@@ -24,10 +24,6 @@
     "minecraft:jungle_log",
     "minecraft:dark_oak_log",
     "minecraft:mangrove_log",
-    "minecraft:spruce_log",
-    "minecraft:crimson_stem",
-    "minecraft:warped_stem",
-    "minecraft:stripped_crimson_stem",
-    "minecraft:stripped_warped_stem"
+    "minecraft:spruce_log"
   ]
 }
