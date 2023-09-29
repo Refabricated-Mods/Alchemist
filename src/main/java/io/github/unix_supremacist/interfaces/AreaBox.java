@@ -37,13 +37,4 @@ public interface AreaBox {
                 return null;
         }
     }
-
-    default int[] thing(int size){;
-        int[] x = new int[size * 2];
-        for (int i = 0; i < size; i+=2) {
-            x[i] = i%3;
-            x[i+1] = i/3;
-        }
-        return x;
-    }
 }
