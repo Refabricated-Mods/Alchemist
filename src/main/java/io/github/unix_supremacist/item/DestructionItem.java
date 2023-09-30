@@ -42,9 +42,11 @@ public class DestructionItem extends AbstractEmpowerableItem implements AreaBox 
 
         if(!blocks.isEmpty()){
             if (!context.getLevel().isClientSide()) for (BlockPos b : blocks){
-                context.getLevel().destroyBlock(b, !context.getPlayer().isCreative());
-                ItemStack stack = context.getPlayer().getItemInHand(context.getHand()).copy();
-                context.getPlayer().setItemInHand(context.getHand(), stack);
+                if(!(context.getLevel().getBlockState(b).getBlock().defaultDestroyTime() < 0)){
+                    context.getLevel().destroyBlock(b, !context.getPlayer().isCreative());
+                    ItemStack stack = context.getPlayer().getItemInHand(context.getHand()).copy();
+                    context.getPlayer().setItemInHand(context.getHand(), stack);
+                }
             }
             result = InteractionResult.SUCCESS;
         }

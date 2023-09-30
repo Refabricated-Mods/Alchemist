@@ -34,12 +34,6 @@ public class TransmutionCircleBlock extends Block implements TransmuteEntity {
                 level.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
                 return transmuteEntity(villagerList.get(0), level);
             }
-
-            List<Wolf> wolfList = level.getEntitiesOfClass(Wolf.class, aABB);
-            if(!wolfList.isEmpty()){
-                level.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
-                return transmuteEntity(wolfList.get(0), level);
-            }
         }
 
         return InteractionResult.PASS;

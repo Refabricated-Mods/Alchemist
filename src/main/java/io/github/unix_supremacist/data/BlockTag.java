@@ -21,6 +21,8 @@ public class BlockTag extends FabricTagProvider.BlockTagProvider {
     public static TagKey<Block> netherwoodtag = TagKey.create(BuiltInRegistries.BLOCK.key(), new ResourceLocation(Alchemist.MODID, "netherwood"));
     public static TagKey<Block> leavetag = TagKey.create(BuiltInRegistries.BLOCK.key(), new ResourceLocation(Alchemist.MODID, "leave"));
     public static TagKey<Block> stonetag = TagKey.create(BuiltInRegistries.BLOCK.key(), new ResourceLocation(Alchemist.MODID, "stone"));
+    public static TagKey<Block> obsidiantag = TagKey.create(BuiltInRegistries.BLOCK.key(), new ResourceLocation(Alchemist.MODID, "obsidian"));
+    public static TagKey<Block> stonebrickstag = TagKey.create(BuiltInRegistries.BLOCK.key(), new ResourceLocation(Alchemist.MODID, "stonebricks"));
 
     public BlockTag(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> completableFuture) {
         super(output, completableFuture);
@@ -38,6 +40,8 @@ public class BlockTag extends FabricTagProvider.BlockTagProvider {
         addExchange(netherwoodtag);
         addExchange(leavetag);
         addExchange(stonetag);
+        addExchange(obsidiantag);
+        addExchange(stonebrickstag);
     }
 
     @Override
@@ -47,6 +51,7 @@ public class BlockTag extends FabricTagProvider.BlockTagProvider {
         terra.add(Blocks.DIRT);
         terra.add(Blocks.COARSE_DIRT);
         terra.add(Blocks.COBBLESTONE);
+        terra.add(Blocks.MOSSY_COBBLESTONE);
         terra.add(Blocks.COBBLED_DEEPSLATE);
         terra.add(Blocks.STONE);
         terra.add(Blocks.DEEPSLATE);
@@ -102,7 +107,17 @@ public class BlockTag extends FabricTagProvider.BlockTagProvider {
         stone.add(Blocks.ANDESITE);
         stone.add(Blocks.DIORITE);
         stone.add(Blocks.GRANITE);
+        stone.add(Blocks.SANDSTONE);
+        stone.add(Blocks.RED_SANDSTONE);
         stone.add(Blocks.CLAY);
+
+        FabricTagBuilder obsidian = getOrCreateTagBuilder(obsidiantag);
+        obsidian.add(Blocks.OBSIDIAN);
+        obsidian.add(Blocks.CRYING_OBSIDIAN);
+
+        FabricTagBuilder stonebricks = getOrCreateTagBuilder(stonebrickstag);
+        stonebricks.add(Blocks.STONE_BRICKS);
+        stonebricks.add(Blocks.MOSSY_STONE_BRICKS);
     }
 
     public static Block getBlockWithOffset(Block b, ArrayList<Block> exchange, int o){

@@ -18,7 +18,6 @@ public interface AreaBox {
     }
 
     default ArrayList<BlockPos> getAreaFromFacing(Direction dir, BlockPos anchor, int size, int depth){
-        Alchemist.LOGGER.error(size+" "+depth);
         switch(dir) {
             case SOUTH:
                 return getArea(dir, anchor, new BlockPos(-size, -size, -depth), new BlockPos(size, size, 0));
