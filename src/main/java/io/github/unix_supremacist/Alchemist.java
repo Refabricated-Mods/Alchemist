@@ -7,6 +7,7 @@ import io.github.unix_supremacist.data.BlockTag;
 import io.github.unix_supremacist.item.AbstractEmpowerableItem;
 import net.fabricmc.fabric.api.event.lifecycle.v1.CommonLifecycleEvents;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
@@ -21,11 +22,12 @@ import org.slf4j.LoggerFactory;
 public class Alchemist {
     public static final String MODID = "alchemist";
     public static final Logger LOGGER = LoggerFactory.getLogger(MODID);
+    public static final ResourceLocation empower_packet = new ResourceLocation(Alchemist.MODID, "empower_packet");
     public static final CreativeModeTab tab = FabricItemGroup.builder()
             .icon(() -> new ItemStack(AlchemistItems.philosophers_stone.getItem()))
             .title(Component.translatable("itemGroup."+MODID))
             .build();
-    static boolean run = true;
+
 
 
     public static void Init(){
@@ -37,17 +39,11 @@ public class Alchemist {
         CommonLifecycleEvents.TAGS_LOADED.register((registries, client) -> {
             BlockTag.init();
         });
-    }
-
-    public static void empowerByKey(boolean key, ItemStack itemstack, Player p){
-        Item item = itemstack.getItem();
-        if(key && run){
-            run = false;
-            if(item instanceof AbstractEmpowerableItem){
-                ((AbstractEmpowerableItem) item).empower(itemstack, p);
+        ServerPlayNetworking.registerGlobalReceiver(empower_packet, (server, player, handler, buf, responseSender) -> {
+            ItemStack item = player.getMainHandItem();
+            if(item.getItem() instanceof AbstractEmpowerableItem){
+                ((AbstractEmpowerableItem) item.getItem()).empower(item, player);
             }
-        } else {
-            run = true;
-        }
+        });
     }
 }

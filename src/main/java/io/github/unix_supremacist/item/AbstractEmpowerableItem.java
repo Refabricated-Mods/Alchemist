@@ -47,12 +47,6 @@ public class AbstractEmpowerableItem extends Item {
         }
     }
 
-    @Override
-    public InteractionResultHolder<ItemStack> use(Level l, Player p, InteractionHand h){
-        empower(p.getItemInHand(h), p);
-        return InteractionResultHolder.success(p.getItemInHand(h));
-    }
-
     public void empower(ItemStack item, Player p){
         if(isBarVisible(item))
             setPower(item, getPower(item)-1);

@@ -32,12 +32,12 @@ public class DestructionItem extends AbstractEmpowerableItem implements AreaBox 
     @Override
     public void empower(ItemStack item, Player p){
         super.empower(item, p);
-        p.displayClientMessage(Component.literal("Width: "+((maxWidth-1)*2-MODES[getPower(item)*2]*2+1)+" and Depth: "+(maxDepth-MODES[getPower(item)*2+1])*mult), true);
+        p.displayClientMessage(Component.literal("Width: "+((maxWidth-1)*2-MODES[getPower(item)*2]*2+1)+" and Depth: "+((maxDepth-1-MODES[getPower(item)*2+1])*mult+1)), true);
     }
 
     @Override
     public InteractionResult useOn(UseOnContext context) {
-        ArrayList<BlockPos> blocks = getAreaFromFacing(context.getClickedFace(), context.getClickedPos(), (maxWidth-1)-MODES[getPower(context.getItemInHand())*2], ((maxDepth-1)-MODES[getPower(context.getItemInHand())*2+1])*mult);
+        ArrayList<BlockPos> blocks = getAreaFromFacing(context.getClickedFace(), context.getClickedPos(), maxWidth-1-MODES[getPower(context.getItemInHand())*2], (maxDepth-1-MODES[getPower(context.getItemInHand())*2+1])*mult);
         InteractionResult result = InteractionResult.PASS;
 
         if(!blocks.isEmpty()){
