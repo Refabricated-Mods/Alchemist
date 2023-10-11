@@ -15,7 +15,9 @@ import net.minecraft.world.level.block.Block;
 
 import java.util.ArrayList;
 
-public class PhilosophersStoneItem extends AbstractEmpowerableItem implements AreaBox, TransmuteEntity {
+import static io.github.unix_supremacist.interfaces.AreaBox.getAreaFromFacing;
+
+public class PhilosophersStoneItem extends AbstractEmpowerableItem implements TransmuteEntity {
     public PhilosophersStoneItem(Properties properties) {
         super(properties, 3);
     }

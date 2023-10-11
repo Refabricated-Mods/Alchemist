@@ -1,6 +1,5 @@
 package io.github.unix_supremacist.item;
 
-import io.github.unix_supremacist.interfaces.AreaBox;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionResult;
@@ -10,7 +9,9 @@ import net.minecraft.world.item.context.UseOnContext;
 
 import java.util.ArrayList;
 
-public class DestructionItem extends AbstractEmpowerableItem implements AreaBox {
+import static io.github.unix_supremacist.interfaces.AreaBox.getAreaFromFacing;
+
+public class DestructionItem extends AbstractEmpowerableItem {
     protected final int[] MODES;
     private final int maxWidth;
     private final int maxDepth;

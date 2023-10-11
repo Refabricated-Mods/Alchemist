@@ -6,8 +6,8 @@ import net.minecraft.core.Direction;
 
 import java.util.ArrayList;
 
-public interface AreaBox {
-    default ArrayList<BlockPos> getArea(Direction dir, BlockPos anchor, BlockPos negative, BlockPos positive){
+public final class AreaBox {
+    public static ArrayList<BlockPos> getArea(Direction dir, BlockPos anchor, BlockPos negative, BlockPos positive){
         ArrayList<BlockPos> blocks = new ArrayList<>();
 
         for(int x = negative.getX(); x <= positive.getX(); x++)
@@ -17,7 +17,7 @@ public interface AreaBox {
         return blocks;
     }
 
-    default ArrayList<BlockPos> getAreaFromFacing(Direction dir, BlockPos anchor, int size, int depth){
+    public static ArrayList<BlockPos> getAreaFromFacing(Direction dir, BlockPos anchor, int size, int depth){
         switch(dir) {
             case SOUTH:
                 return getArea(dir, anchor, new BlockPos(-size, -size, -depth), new BlockPos(size, size, 0));
