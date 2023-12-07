@@ -1,16 +1,13 @@
 package io.github.unix_supremacist.item;
 
+import io.github.unix_supremacist.interfaces.DurablityBar;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.util.Mth;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
-import net.minecraft.world.level.Level;
 
-public class AbstractEmpowerableItem extends Item {
+public class AbstractEmpowerableItem extends Item implements DurablityBar {
     protected final int maxPower;
     public AbstractEmpowerableItem(Properties properties, int maxPower) {
         super(properties);
@@ -19,8 +16,7 @@ public class AbstractEmpowerableItem extends Item {
 
     @Override
     public int getBarColor(ItemStack item) {
-        float f = Math.max(0.0F, ((float)this.maxPower - (float)getPower(item)) / (float)this.maxPower);
-        return Mth.hsvToRgb(f / 1.1F, 1.0F, 1.0F);
+        return getColor(this.maxPower, getPower(item));
     }
 
     @Override

@@ -9,6 +9,7 @@ import io.github.unix_supremacist.Alchemist;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Rarity;
 
 public class GaleItem extends TrinketItem {
     public GaleItem(Properties properties) {
@@ -28,5 +29,10 @@ public class GaleItem extends TrinketItem {
         if (!entity.level().isClientSide())
             if (entity instanceof Player)
                 gale_ability.revokeFrom((Player) entity, VanillaAbilities.ALLOW_FLYING);
+    }
+
+    @Override
+    public Rarity getRarity(ItemStack s){
+        return Rarity.EPIC;
     }
 }

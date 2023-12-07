@@ -1,10 +1,7 @@
 package io.github.unix_supremacist.content;
 
 import io.github.unix_supremacist.Alchemist;
-import io.github.unix_supremacist.item.ChalkItem;
-import io.github.unix_supremacist.item.DestructionItem;
-import io.github.unix_supremacist.item.GaleItem;
-import io.github.unix_supremacist.item.PhilosophersStoneItem;
+import io.github.unix_supremacist.item.*;
 import lombok.Getter;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
@@ -14,13 +11,16 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Item.Properties;
+import net.minecraft.world.item.Tiers;
+import net.minecraft.world.level.block.Blocks;
 
 public enum AlchemistItems {
-    alchemical_coal(6400),
-    //archangels_smite,
+    alchemical_coal(25600),
+    aeternalis_fuel(1638400),
     //black_hole_band,
     catalytic_lens(new DestructionItem(new Properties().stacksTo(1), 3, 10, 5)),
-    chalk(new ChalkItem(AlchemistBlocks.transmutation_circle.getBlock(), new Properties().durability(64))),
+    chalk(new AlchemistBlockItem(AlchemistBlocks.transmutation_circle.getBlock(), new Properties().durability(64))),
+    coal_coke(3200),
     dark_matter,
     //dark_matter_pickaxe,
     //dark_matter_shovel,
@@ -28,17 +28,18 @@ public enum AlchemistItems {
     //dark_matter_sword,
     //dark_matter_axe,
     //dark_matter_shears,
-    //dark_matter_hammer,
+    dark_matter_hammer(new AlchemistHammerItem(Tiers.NETHERITE, 1, -2.8f, new Properties())),
     destruction_catalyst(new DestructionItem(new Properties().stacksTo(1), 3, 5, 1)),
-    //evertide_amulet,
+    evertide_amulet(new AlchemistBlockItem(Blocks.WATER, new Properties().stacksTo(1))),
     //gem_of_eternal_density,
     //harvest_goddess_band,
     //hyperkinetic_lens,
     iron_band,
-    mobius_fuel(25600),
+    mobius_fuel(204800),
     philosophers_stone(new PhilosophersStoneItem(new Properties().stacksTo(1))),
+    red_matter,
     swiftwolfs_rending_gale(new GaleItem(new Properties().stacksTo(1))),
-    //volcanite_amulet,
+    volcanite_amulet(new AlchemistBlockItem(Blocks.LAVA, new Properties().durability(64))),
     ;
     @Getter Item item;
     AlchemistItems(){

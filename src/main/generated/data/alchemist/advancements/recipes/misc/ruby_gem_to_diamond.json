@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_philosophers_stone": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "alchemist:philosophers_stone"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "alchemist:ruby_gem_to_diamond"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_philosophers_stone"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "alchemist:ruby_gem_to_diamond"
+    ]
+  },
+  "sends_telemetry_event": false
+}

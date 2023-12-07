@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "alchemist:philosophers_stone"
+    },
+    {
+      "item": "techreborn:peridot_gem"
+    },
+    {
+      "item": "techreborn:peridot_gem"
+    },
+    {
+      "item": "techreborn:peridot_gem"
+    },
+    {
+      "item": "techreborn:peridot_gem"
+    },
+    {
+      "item": "techreborn:peridot_gem"
+    },
+    {
+      "item": "techreborn:peridot_gem"
+    }
+  ],
+  "result": {
+    "count": 6,
+    "item": "techreborn:ruby_gem"
+  }
+}

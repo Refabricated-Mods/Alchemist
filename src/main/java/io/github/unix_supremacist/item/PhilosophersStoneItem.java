@@ -1,6 +1,5 @@
 package io.github.unix_supremacist.item;
 
-import io.github.unix_supremacist.content.AlchemistItems;
 import io.github.unix_supremacist.data.BlockTag;
 import io.github.unix_supremacist.interfaces.AreaBox;
 import io.github.unix_supremacist.interfaces.TransmuteEntity;
@@ -57,6 +56,6 @@ public class PhilosophersStoneItem extends AbstractEmpowerableItem implements Ar
 
     @Override
     public ItemStack getRecipeRemainder(ItemStack stack) {
-        return new ItemStack(AlchemistItems.philosophers_stone.getItem());
+        return stack.copy();
     }
 }

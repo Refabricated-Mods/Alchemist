@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "alchemist:philosophers_stone"
+    },
+    {
+      "item": "minecraft:raw_gold"
+    },
+    {
+      "item": "minecraft:raw_gold"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "techreborn:raw_silver"
+  }
+}

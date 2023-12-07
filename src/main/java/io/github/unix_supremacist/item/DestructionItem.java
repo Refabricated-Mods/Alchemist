@@ -1,6 +1,7 @@
 package io.github.unix_supremacist.item;
 
 import io.github.unix_supremacist.interfaces.AreaBox;
+import io.github.unix_supremacist.interfaces.Destroyer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionResult;
@@ -10,7 +11,7 @@ import net.minecraft.world.item.context.UseOnContext;
 
 import java.util.ArrayList;
 
-public class DestructionItem extends AbstractEmpowerableItem implements AreaBox {
+public class DestructionItem extends AbstractEmpowerableItem implements AreaBox, Destroyer {
     protected final int[] MODES;
     private final int maxWidth;
     private final int maxDepth;
@@ -38,19 +39,6 @@ public class DestructionItem extends AbstractEmpowerableItem implements AreaBox 
     @Override
     public InteractionResult useOn(UseOnContext context) {
         ArrayList<BlockPos> blocks = getAreaFromFacing(context.getClickedFace(), context.getClickedPos(), maxWidth-1-MODES[getPower(context.getItemInHand())*2], (maxDepth-1-MODES[getPower(context.getItemInHand())*2+1])*mult);
-        InteractionResult result = InteractionResult.PASS;
-
-        if(!blocks.isEmpty()){
-            if (!context.getLevel().isClientSide()) for (BlockPos b : blocks){
-                if(!(context.getLevel().getBlockState(b).getBlock().defaultDestroyTime() < 0)){
-                    context.getLevel().destroyBlock(b, !context.getPlayer().isCreative());
-                    ItemStack stack = context.getPlayer().getItemInHand(context.getHand()).copy();
-                    context.getPlayer().setItemInHand(context.getHand(), stack);
-                }
-            }
-            result = InteractionResult.SUCCESS;
-        }
-
-        return result;
+        return destroyArea(context.getLevel(), blocks, context.getPlayer());
     }
 }

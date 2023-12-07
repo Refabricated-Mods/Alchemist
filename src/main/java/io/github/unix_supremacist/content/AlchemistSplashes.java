@@ -1,6 +1,6 @@
 package io.github.unix_supremacist.content;
 
-import io.github.feltmc.feltapi.api.splash.SplashAPI;
+import net.feltmc.feltapi.api.splash.SplashAPI;
 
 public class AlchemistSplashes {
     public static String[] splashes = {

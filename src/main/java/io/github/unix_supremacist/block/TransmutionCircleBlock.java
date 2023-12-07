@@ -4,7 +4,6 @@ import io.github.unix_supremacist.interfaces.TransmuteEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.animal.Wolf;
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.BlockGetter;
@@ -42,6 +41,11 @@ public class TransmutionCircleBlock extends Block implements TransmuteEntity {
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         return Shapes.box(0f, 0f, 0f, 1f, 0.02f, 1f);
+    }
+
+    @Override
+    public VoxelShape getCollisionShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext) {
+        return Shapes.empty();
     }
 
     @Override

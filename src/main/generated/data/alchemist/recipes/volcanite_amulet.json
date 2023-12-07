@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "D": {
+      "item": "alchemist:dark_matter"
+    },
+    "L": {
+      "tag": "c:lava_buckets"
+    }
+  },
+  "pattern": [
+    "LLL",
+    "DDD",
+    "LLL"
+  ],
+  "result": {
+    "item": "alchemist:volcanite_amulet"
+  },
+  "show_notification": true
+}

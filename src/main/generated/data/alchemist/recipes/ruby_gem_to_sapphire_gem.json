@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "alchemist:philosophers_stone"
+    },
+    {
+      "item": "techreborn:sapphire_gem"
+    },
+    {
+      "item": "techreborn:sapphire_gem"
+    },
+    {
+      "item": "techreborn:sapphire_gem"
+    },
+    {
+      "item": "techreborn:sapphire_gem"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "techreborn:ruby_gem"
+  }
+}

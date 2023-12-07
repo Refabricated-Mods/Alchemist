@@ -1,24 +1,24 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_flint_and_steel": {
+    "has_aeternalis_fuel": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:flint_and_steel"
+              "alchemist:aeternalis_fuel"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_mobius_fuel": {
+    "has_flint_and_steel": {
       "conditions": {
         "items": [
           {
             "items": [
-              "alchemist:mobius_fuel"
+              "minecraft:flint_and_steel"
             ]
           }
         ]
@@ -37,6 +37,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_red_matter": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "alchemist:red_matter"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_the_recipe": {
       "conditions": {
         "recipe": "alchemist:destruction_catalyst"
@@ -48,8 +60,9 @@
     [
       "has_the_recipe",
       "has_flint_and_steel",
-      "has_mobius_fuel",
-      "has_philosophers_stone"
+      "has_aeternalis_fuel",
+      "has_philosophers_stone",
+      "has_red_matter"
     ]
   ],
   "rewards": {

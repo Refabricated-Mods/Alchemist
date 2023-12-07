@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "alchemist:philosophers_stone"
+    },
+    {
+      "item": "techreborn:lead_ingot"
+    },
+    {
+      "item": "techreborn:lead_ingot"
+    }
+  ],
+  "result": {
+    "item": "techreborn:silver_ingot"
+  }
+}

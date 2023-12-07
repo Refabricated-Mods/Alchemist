@@ -32,7 +32,7 @@ public interface AreaBox {
             case DOWN:
                 return getArea(dir, anchor, new BlockPos(-size, 0, -size), new BlockPos(size, depth, size));
             default:
-                Alchemist.LOGGER.error("HOW DID YOU CLICK A DIRECTION THAT ISN'T NORTH SOUTH EAST WEST TOP OR BOTTOM");
+                    Alchemist.LOGGER.error("HOW DID YOU CLICK A DIRECTION THAT ISN'T NORTH SOUTH EAST WEST UP OR DOWN");
                 return null;
         }
     }

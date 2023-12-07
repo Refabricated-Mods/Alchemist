@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "D": {
+      "item": "alchemist:dark_matter"
+    },
+    "W": {
+      "tag": "c:water_buckets"
+    }
+  },
+  "pattern": [
+    "WWW",
+    "DDD",
+    "WWW"
+  ],
+  "result": {
+    "item": "alchemist:evertide_amulet"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "M": {
+      "item": "alchemist:mobius_fuel"
+    },
+    "N": {
+      "item": "minecraft:netherite_block"
+    }
+  },
+  "pattern": [
+    "MMM",
+    "MNM",
+    "MMM"
+  ],
+  "result": {
+    "item": "alchemist:dark_matter"
+  },
+  "show_notification": true
+}

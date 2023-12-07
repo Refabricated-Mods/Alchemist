@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "alchemist:philosophers_stone"
+    },
+    {
+      "item": "alchemist:mobius_fuel"
+    },
+    {
+      "item": "alchemist:mobius_fuel"
+    },
+    {
+      "item": "alchemist:mobius_fuel"
+    },
+    {
+      "item": "alchemist:mobius_fuel"
+    },
+    {
+      "item": "alchemist:mobius_fuel"
+    },
+    {
+      "item": "alchemist:mobius_fuel"
+    },
+    {
+      "item": "alchemist:mobius_fuel"
+    },
+    {
+      "item": "alchemist:mobius_fuel"
+    }
+  ],
+  "result": {
+    "item": "alchemist:aeternalis_fuel"
+  }
+}
