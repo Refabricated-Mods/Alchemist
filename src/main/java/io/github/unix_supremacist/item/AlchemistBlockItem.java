@@ -1,9 +1,9 @@
 package io.github.unix_supremacist.item;
 
+import io.github.unix_supremacist.alabli.AlabliBlockItem;
 import io.github.unix_supremacist.interfaces.DurablityBar;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -13,7 +13,7 @@ import net.minecraft.world.level.block.Blocks;
 
 import static io.github.unix_supremacist.content.AlchemistItems.chalk;
 
-public class AlchemistBlockItem extends BlockItem implements DurablityBar {
+public class AlchemistBlockItem extends AlabliBlockItem implements DurablityBar {
     public AlchemistBlockItem(Block block, Properties properties) {
         super(block, properties);
     }

@@ -1,13 +1,12 @@
 package io.github.unix_supremacist.content;
 
 import io.github.unix_supremacist.Alchemist;
+import io.github.unix_supremacist.alabli.Alabli;
 import io.github.unix_supremacist.item.*;
 import lombok.Getter;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Item.Properties;
@@ -66,8 +65,6 @@ public enum AlchemistItems {
         this.item = item;
         FuelRegistry.INSTANCE.add(item, burntime);
         Registry.register(BuiltInRegistries.ITEM, new ResourceLocation(Alchemist.MODID, this.name()), item);
-        ItemGroupEvents.modifyEntriesEvent(ResourceKey.create(BuiltInRegistries.CREATIVE_MODE_TAB.key(), new ResourceLocation(Alchemist.MODID, "tab"))).register(content -> {
-            content.accept(item);
-        });
+        Alabli.items.add(item);
     }
 }

@@ -12,7 +12,7 @@
 	],
 	"contact": {
 		"homepage": "https://unix-supremacist.github.io",
-		"sources": "https://github.com/unix-supremacist/alchemist"
+		"sources": "https://github.com/Refabricated-Mods/alchemist"
 	},
 	"license": "OSL-3.0",
 	"icon": "assets/alchemist/icon.png",
@@ -30,7 +30,7 @@
 	},
 	"depends": {
 		"fabricloader": ">=0.15.0",
-		"minecraft": ">=1.20",
+		"minecraft": ">=1.18",
 		"java": ">=17",
 		"fabric-api": "*",
 		"trinkets": "*",

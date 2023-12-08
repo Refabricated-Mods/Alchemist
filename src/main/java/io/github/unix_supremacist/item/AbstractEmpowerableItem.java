@@ -1,13 +1,13 @@
 package io.github.unix_supremacist.item;
 
+import io.github.unix_supremacist.alabli.AlabliItem;
 import io.github.unix_supremacist.interfaces.DurablityBar;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
 
-public class AbstractEmpowerableItem extends Item implements DurablityBar {
+public class AbstractEmpowerableItem extends AlabliItem implements DurablityBar {
     protected final int maxPower;
     public AbstractEmpowerableItem(Properties properties, int maxPower) {
         super(properties);

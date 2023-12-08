@@ -1,5 +1,6 @@
 package io.github.unix_supremacist.item;
 
+import io.github.unix_supremacist.alabli.AlabliDiggerItem;
 import io.github.unix_supremacist.interfaces.AreaBox;
 import io.github.unix_supremacist.interfaces.Destroyer;
 import io.github.unix_supremacist.interfaces.DurablityBar;
@@ -7,7 +8,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.DiggerItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.Tier;
@@ -18,7 +18,7 @@ import net.minecraft.world.phys.Vec3;
 
 import java.util.ArrayList;
 
-public class AlchemistDiggerItem extends DiggerItem implements AreaBox, Destroyer, DurablityBar {
+public class AlchemistDiggerItem extends AlabliDiggerItem implements AreaBox, Destroyer, DurablityBar {
     public AlchemistDiggerItem(float f, float g, Tier tier, TagKey<Block> tagKey, Properties properties) {
         super(f, g, tier, tagKey, properties);
     }
