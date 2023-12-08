@@ -17,13 +17,13 @@ import java.util.concurrent.CompletableFuture;
 
 public class BlockTag extends FabricTagProvider.BlockTagProvider {
     public static HashSet<ArrayList<Block>> exchanges = new HashSet<>();
-    public static TagKey<Block> terratag = TagKey.create(BuiltInRegistries.BLOCK.key(), new ResourceLocation(Alchemist.MODID, "terra"));
-    public static TagKey<Block> woodtag = TagKey.create(BuiltInRegistries.BLOCK.key(), new ResourceLocation(Alchemist.MODID, "wood"));
-    public static TagKey<Block> netherwoodtag = TagKey.create(BuiltInRegistries.BLOCK.key(), new ResourceLocation(Alchemist.MODID, "netherwood"));
-    public static TagKey<Block> leavetag = TagKey.create(BuiltInRegistries.BLOCK.key(), new ResourceLocation(Alchemist.MODID, "leave"));
-    public static TagKey<Block> stonetag = TagKey.create(BuiltInRegistries.BLOCK.key(), new ResourceLocation(Alchemist.MODID, "stone"));
-    public static TagKey<Block> obsidiantag = TagKey.create(BuiltInRegistries.BLOCK.key(), new ResourceLocation(Alchemist.MODID, "obsidian"));
-    public static TagKey<Block> stonebrickstag = TagKey.create(BuiltInRegistries.BLOCK.key(), new ResourceLocation(Alchemist.MODID, "stonebricks"));
+    public static TagKey<Block> terratag = AlabliRegistry.createBlockTag("terra");
+    public static TagKey<Block> woodtag = AlabliRegistry.createBlockTag("wood");
+    public static TagKey<Block> netherwoodtag = AlabliRegistry.createBlockTag("netherwood");
+    public static TagKey<Block> leavetag = AlabliRegistry.createBlockTag("leave");
+    public static TagKey<Block> stonetag = AlabliRegistry.createBlockTag("stone");
+    public static TagKey<Block> obsidiantag = AlabliRegistry.createBlockTag("obsidian");
+    public static TagKey<Block> stonebrickstag = AlabliRegistry.createBlockTag("stonebricks");
 
     public BlockTag(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> completableFuture) {
         super(output, completableFuture);
