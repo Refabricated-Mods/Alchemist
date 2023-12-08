@@ -2,6 +2,7 @@ package io.github.unix_supremacist.content;
 
 import io.github.unix_supremacist.Alchemist;
 import io.github.unix_supremacist.alabli.Alabli;
+import io.github.unix_supremacist.alabli.AlabliRegistry;
 import io.github.unix_supremacist.item.*;
 import lombok.Getter;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
@@ -64,7 +65,6 @@ public enum AlchemistItems {
     AlchemistItems(Item item, int burntime){
         this.item = item;
         FuelRegistry.INSTANCE.add(item, burntime);
-        Registry.register(BuiltInRegistries.ITEM, new ResourceLocation(Alchemist.MODID, this.name()), item);
-        Alabli.items.add(item);
+        AlabliRegistry.registerItem(item, this.name());
     }
 }

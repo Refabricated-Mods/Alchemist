@@ -2,6 +2,7 @@ package io.github.unix_supremacist.content;
 
 import io.github.unix_supremacist.Alchemist;
 import io.github.unix_supremacist.alabli.Alabli;
+import io.github.unix_supremacist.alabli.AlabliRegistry;
 import io.github.unix_supremacist.block.TransmutionCircleBlock;
 import lombok.Getter;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -16,6 +17,6 @@ public enum AlchemistBlocks {
 
     AlchemistBlocks(Block block){
         this.block = block;
-        Registry.register(BuiltInRegistries.BLOCK, new ResourceLocation(Alchemist.MODID, this.name()), block);
+        AlabliRegistry.registerBlock(block, this.name());
     }
 }
