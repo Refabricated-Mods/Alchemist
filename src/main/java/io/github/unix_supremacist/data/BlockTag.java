@@ -1,6 +1,7 @@
 package io.github.unix_supremacist.data;
 
 import io.github.unix_supremacist.Alchemist;
+import io.github.unix_supremacist.alabli.AlabliRegistry;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.core.HolderLookup;
@@ -30,7 +31,7 @@ public class BlockTag extends FabricTagProvider.BlockTagProvider {
 
     protected static void addExchange(TagKey<Block> tag){
         ArrayList<Block> arrayList = new ArrayList<>();
-        BuiltInRegistries.BLOCK.getTagOrEmpty(tag).iterator().forEachRemaining(t ->arrayList.add(t.value()));
+        AlabliRegistry.registerBlockTag(tag, arrayList);
         exchanges.add(arrayList);
     }
 
