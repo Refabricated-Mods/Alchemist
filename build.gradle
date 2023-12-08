@@ -89,12 +89,6 @@ dependencies {
 	include modImplementation("net.feltmc:felt-splash-api:1.0.0-1.20.1"){
 		exclude(group: "com.terraformersmc")
 	}
-	/*include modImplementation("net.feltmc:felt-tool-api:1.0.0-1.20.1"){
-		exclude(group: "com.terraformersmc")
-	}
-	include modImplementation("net.feltmc:felt-enchanting-api:1.0.0-1.20.2"){
-		exclude(group: "com.terraformersmc")
-	}*/
 	modRuntimeOnly "maven.modrinth:modmenu:${project.modmenu_version}"
 	modImplementation "io.github.ladysnake:PlayerAbilityLib:1.9.0"
 	//required for trinkets
